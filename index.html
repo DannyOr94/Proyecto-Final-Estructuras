@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Selección de Cartas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Juego de Selección de Cartas</h1>
+        
+        <div id="welcomeSection" class="section active">
+            <p>Bienvenido al Juego de Selección de Cartas. Puedes agregar exactamente 5 cartas con valores entre 1 y 13. Luego, la máquina escogerá una carta al azar y tendrás que adivinarla eliminando cartas. Tienes hasta 3 intentos para eliminar cartas antes de hacer tu adivinanza final.</p>
+            <button id="startButton">Siguiente</button>
+        </div>
+        
+        <div id="addCardsSection" class="section hidden">
+            <input type="number" id="cardValue" placeholder="Valor de la carta (1-13)" min="1" max="13">
+            <button id="addCardButton">Agregar Carta</button>
+            <div id="card" class="card-stack"></div> <!-- Cambio realizado aquí -->
+            <button id="toRemoveSectionButton" class="hidden">Siguiente</button>
+        </div>
+        
+        <div id="removeCardsSection" class="section hidden">
+            <div class="remove-options">
+                <div>
+                    <input type="number" id="removeCardIndex" placeholder="Índice para eliminar">
+                    <button id="removeCardButton">Eliminar por Índice</button>
+                </div>
+                <div>
+                    <input type="number" id="removeCardValue" placeholder="Valor para eliminar">
+                    <button id="removeCardByValueButton">Eliminar por Valor</button>
+                </div>
+            </div>
+            <div class="add-again">
+                <input type="number" id="reAddCardValue" placeholder="Valor para re-agregar (1-13)" min="1" max="13">
+                <button id="reAddCardButton">Re-agregar Carta</button>
+            </div>
+            <button id="toGuessSectionButton">Siguiente</button>
+            <div id="cardRemove" class="card-stack"></div> <!-- Cambio realizado aquí -->
+        </div>
+        
+        <div id="guessSection" class="section hidden">
+            <p>He escogido una carta. Es tu turno de adivinarla. Puedes eliminar hasta 3 cartas.</p>
+            <div class="remove-options">
+                <div>
+                    <input type="number" id="removeCardIndexGuess" placeholder="Índice para eliminar">
+                    <button id="removeCardButtonGuess">Eliminar por Índice</button>
+                </div>
+                <div>
+                    <input type="number" id="removeCardValueGuess" placeholder="Valor para eliminar">
+                    <button id="removeCardByValueButtonGuess">Eliminar por Valor</button>
+                </div>
+            </div>
+            <div id="cardGuess" class="card-stack"></div> <!-- Cambio realizado aquí -->
+            <input type="number" id="guessCardValue" placeholder="Adivina el valor">
+            <button id="guessCardButton">Adivinar Carta</button>
+            <button id="resetButton">Reiniciar Juego</button>
+        </div>
+        
+        <div id="message" class="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
